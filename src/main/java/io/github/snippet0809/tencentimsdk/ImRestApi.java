@@ -1,4 +1,4 @@
-package io.github.snippet0809;
+package io.github.snippet0809.tencentimsdk;
 
 public interface ImRestApi {
 

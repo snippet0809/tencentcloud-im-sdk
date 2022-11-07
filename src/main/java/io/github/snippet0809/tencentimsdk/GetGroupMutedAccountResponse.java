@@ -1,4 +1,4 @@
-package io.github.snippet0809;
+package io.github.snippet0809.tencentimsdk;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
