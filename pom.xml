@@ -4,7 +4,7 @@
 
     <groupId>io.github.snippet0809</groupId>
     <artifactId>tencentcloud-im-sdk</artifactId>
-    <version>1.0.1</version>
+    <version>2.0</version>
     <packaging>jar</packaging>
 
     <name>tencentcloud-im-sdk</name>
@@ -43,90 +43,12 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <!-- 生成javadoc -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- 生成source jar -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- gpg签名 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- sonatype部署插件 -->
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
+        <repository>
+            <id>github</id>
+            <name>GitHub snippet0809 Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/snippet0809/tencentcloud-im-sdk</url>
+        </repository>
     </distributionManagement>
-
-    <scm>
-        <connection>scm:git:git://github.com/snippet0809/tencentcloud-im-sdk.git</connection>
-        <developerConnection>scm:git:ssh://github.com:snippet0809/tencentcloud-im-sdk.git</developerConnection>
-        <url>https://github.com/snippet0809/tencentcloud-im-sdk/tree/master</url>
-    </scm>
-
-    <licenses>
-        <license>
-            <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <name>Spet</name>
-            <email>snippet0809@outlook.com</email>
-        </developer>
-    </developers>
 </project>
